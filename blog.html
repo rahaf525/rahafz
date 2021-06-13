@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="home.html">Al Noor magazine</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarsExample03">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item mx-4">
+              <a class="nav-link" href="home.html">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active nav-item mx-4">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item mx-4">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item mx-4">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container mt-4" style="background-color: rgb(25, 196, 226);">
+        <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+            <div class="col-md-6 px-0">
+              <h1 class="display-4 font-italic">Welcome to Al Noor magazine blog</h1> 
+              <p class="lead my-3">Your favorite blog source .</p>
+            </div>
+          </div>
+          
+          <div class="container px-0">
+            <div class="card">
+                <div class="card-body">
+                <h4>Make a blog post</h4>
+                <div class="form-group">
+                    <label for="titleInput">Title</label>
+                    <input type="text" class="form-control" id="titleInput" placeholder="Enter a Title">
+                </div>
+                <div id="titleErr" class="alert alert-danger" style="display:none" role="alert">Please add a title to your post</div>
+                
+                <div class="form-group">
+                    <label for="textInput">Text</label>
+                    <textarea rows="4" class="form-control" id="textInput" placeholder="Enter text"></textarea>
+                </div>
+                <div id="textErr" class="alert alert-danger" style="display:none" role="alert">Please add some text to your post</div>
+                <button id="blogSubmit" onclick="blogSubmit()" class="btn btn-lg btn-primary">Submit</button>
+                </div>
+            </div>
+
+            <br>
+            <div id="blogPosts">
+            <br>
+
+
+
+            <div class="singlePost">
+              <br>
+              <div class="card">
+              <div class="card-body">
+                <div class="row title-row">
+                  <div class="col-4"><h1 class="blogTitle">Article Title #3</h1></div>
+                  <div class="col-4"></div>
+                  <div class="col-2"></div>
+                  <div class="col-2"><button onclick="blogEditToggle(this)" class="btn btn-sm btn-info m-1">Edit</button> <button onclick="blogDelete(this)" class="btn btn-sm btn-danger m-1">Delete</button></div>
+                </div>
+              
+              <i class="text-muted">by sara</i><br/><br/>
+              <p class="blogText">Have you ever happened to watch economic news on TV and feel that you are enjoying a strange, strange language of which you do not understand anything? No wonder, economics is a vast science in its own right, and it has its own store of terms and vocabulary. But this does not mean that you have to study economics at a university or specialized institute in order to be able to understand it, as you can simply start by getting to know the most important economic terms to help you understand the general meaning of the economic topics being traded. In today's article, we have collected for you a list of the most important and most common economic terms in the world of economics, so read on to learn about them. The concept of economics Economics is the science that studies how people allocate scarce resources to the process of production, distribution and consumption, whether individually or collectively. Here are some of the important points to know when talking about the concept of economics: There are two types of economics: Macroeconomics: which studies and tests macroeconomics at the regional, local or global level. Microeconomics: which focuses on the behavior of individual consumers and producers. Economics is particularly concerned with efficiency in production, exchange and use of business models and expectations in order to arrive at the development of incentives and policies that raise efficiency and increase efficiency in the world of business and finance. Various economic systems fall under the concept of economy, including capitalism, socialism and communism.</p>
+  
+              
+  
+  
+                <div class="editForm" style="display:none">
+                <h4>Edit this blog post</h4>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" placeholder="Enter a Title" value="${Title}">
+                </div>
+                
+                <div class="form-group">
+                    <label>Text</label>
+                    <textarea rows="4" class="form-control" id="textInput" placeholder="Enter text">${Text}</textarea>
+                </div>
+  
+                <button onclick="blogEdit(this)" class="btn btn-lg btn-primary">Submit</button>
+              </div>
+              </div>    
+              </div>
+              </div>
+
+
+            <div class="singlePost">
+            <br>
+            <div class="card">
+            <div class="card-body">
+              <div class="row title-row">
+                <div class="col-4"><h1 class="blogTitle">Article Title #2</h1></div>
+                <div class="col-4"></div>
+                <div class="col-2"></div>
+                <div class="col-2"><button onclick="blogEditToggle(this)" class="btn btn-sm btn-info m-1">Edit</button> <button onclick="blogDelete(this)" class="btn btn-sm btn-danger m-1">Delete</button></div>
+              </div>
+            
+            <i class="text-muted">by Ahmad</i><br/><br/>
+            <p class="blogText">It is said: “Colors have strength and energy” and it is undoubtedly true, as colors really affect our moods, emotions, and behaviors as well. It may also be a source of information sometimes. Although the response of individuals to colors varies according to their personal experiences, the science of colors as well as the psychology of colors indicate and confirm the existence of general connotations of colors that apply to the vast majority. Many studies have been conducted to understand the connotations of colors, especially in the field of design, marketing, and building advertising identity or "branding". Here are some of the findings from these studies: Colors influence 85% of shoppers' purchasing decisions. 62-90% of product reviews are actually based on color only. Colors can increase brand awareness by 80%.</p>
+
+            
+
+
+              <div class="editForm" style="display:none">
+              <h4>Edit this blog post</h4>
+              <div class="form-group">
+                  <label>Title</label>
+                  <input type="text" class="form-control" placeholder="Enter a Title" value="${Title}">
+              </div>
+              
+              <div class="form-group">
+                  <label>Text</label>
+                  <textarea rows="4" class="form-control" id="textInput" placeholder="Enter text">${Text}</textarea>
+              </div>
+
+              <button onclick="blogEdit(this)" class="btn btn-lg btn-primary">Submit</button>
+            </div>
+            </div>    
+            </div>
+            </div>
+
+            <div class="singlePost">
+              <br>
+              <div class="card">
+              <div class="card-body">
+                <div class="row title-row">
+                  <div class="col-4"><h1 class="blogTitle">Article Title #1</h1></div>
+                  <div class="col-4"></div>
+                  <div class="col-2"></div>
+                  <div class="col-2"><button onclick="blogEditToggle(this)" class="btn btn-sm btn-info m-1">Edit</button> <button onclick="blogDelete(this)" class="btn btn-sm btn-danger m-1">Delete</button></div>
+                </div>
+              
+              <i class="text-muted">by jan </i><br/><br/>
+              <p class="blogText">Who among us has never read one of the works of the famous writer Dostoevsky, or at least heard his name before. This Russian author, novelist and philosopher is considered one of the most famous literary figures around the world. His famous sayings are not only literary phrases and quotes, but also his ideas and philosophy on human life where suffering, love, death and many other feelings are always present. In today's article, we have collected for you a number of Dostoevsky's most famous and deepest sayings that may make you decide to finally read some of his books, or return to them and read them again if you are a true fan of him!</p>
+  
+              
+  
+  
+                <div class="editForm" style="display:none">
+                <h4>Edit this blog post</h4>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" placeholder="Enter a Title" value="${Title}">
+                </div>
+                
+                <div class="form-group">
+                    <label>Text</label>
+                    <textarea rows="4" class="form-control" id="textInput" placeholder="Enter text">${Text}</textarea>
+                </div>
+  
+                <button onclick="blogEdit(this)" class="btn btn-lg btn-primary">Submit</button>
+              </div>
+              </div>    
+              </div>
+              </div>
+
+            </div>
+            
+          </div>
+          <br/><br/><br/><br/>
+      </div>
+
+
+
+
+    <script src="./blog.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
